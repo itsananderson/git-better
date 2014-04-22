@@ -24,5 +24,5 @@ git config --global difftool.kdiff3.keepBackup false
 git config --global difftool.kdiff3.trustExitCode true
 git config --global difftool.kdiff3.keepTemporaries false
 
-git config --global --replace-all alias.difftool 'difftool -y'
-git config --global --replace-all alias.mergetool 'mergetool -y'
+git config --global --replace-all alias.dt 'difftool -y'
+git config --global --replace-all alias.mt 'mergetool -y'
