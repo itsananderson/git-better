@@ -16,12 +16,12 @@ git config --global merge.tool kdiff3
 
 git config --global mergetool.kdiff3.path "$kdiffpath"
 git config --global mergetool.kdiff3.keepBackup false
-git config --global mergetool.kdiff3.trustExitCode false
-git config --global difftool.keepTemporaries false
+git config --global mergetool.kdiff3.trustExitCode true
+git config --global difftool.kdiff3.keepTemporaries false
 
 git config --global difftool.kdiff3.cmd "'$kdiff_win_path' \$LOCAL \$REMOTE"
 git config --global difftool.kdiff3.keepBackup false
-git config --global difftool.kdiff3.trustExitCode false
+git config --global difftool.kdiff3.trustExitCode true
 git config --global difftool.kdiff3.keepTemporaries false
 
 git config --global --replace-all alias.difftool 'difftool -y'
