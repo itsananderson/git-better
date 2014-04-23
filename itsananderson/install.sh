@@ -8,3 +8,6 @@ popd > /dev/null
 $script_dir/../install.sh
 
 # User specific install steps
+
+git config --global format.pretty oneline
+git config --global log.abbrevCommit true
