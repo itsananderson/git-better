@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Configuring Git to use  KDiff3"
+
 kdiffpath=`where kdiff3`
 
 echo '#!/bin/sh' >  ~/git-diff-wrapper.sh
