@@ -1,13 +1,24 @@
 #!/bin/bash
 
-echo "Configuring Git to use  KDiff3"
+echo "Configuring Git to use KDiff3"
 
-kdiffpath=`where kdiff3`
+kdiffpath=`type -P kdiff3`
 
-echo '#!/bin/sh' >  ~/git-diff-wrapper.sh
-echo "'$kdiffpath'" '"$2" "$5" | cat' >> ~/git-diff-wrapper.sh
+if [ -z "$kdiffpath" ]; then
+    echo >&2 "ERROR: Can't find KDiff3. Halting configuration"
+    exit
+fi
 
-git config --global diff.external $HOME/git-diff-wrapper.sh
+if [[ `uname` == MINGW* ]]; then
+	echo Converting KDiff path to Windows path 
+	kdiffpath=`echo $kdiffpath | sed -e 's/\//\\\\/g' | sed -e 's/^\\\\c/c\:/' | sed -e 's/ /\\ /g'`
+fi
+
+script_dir=$(pushd `dirname $0` > /dev/null && pwd -P)
+ 
+./ensure-script.sh diff-wrapper "$(<$script_dir/git-scripts/diff-wrapper.sh)"
+
+git config --global diff.external $HOME/.git-scripts/diff-wrapper.sh
 git config --global diff.tool kdiff3
 git config --global difftool.kdiff3.cmd "'$kdiffpath' \$LOCAL \$REMOTE"
 git config --global difftool.kdiff3.keepBackup false
