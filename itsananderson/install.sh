@@ -17,6 +17,10 @@ fi
 
 $script_dir/apply-kdiff3rc.sh $script_dir/.kdiff3rc ~/.kdiff3rc
 
+echo "Creating 'hub' alias"
+
+git config --global alias.hub \!"sh -c 'git clone git@github.com:\$1.git \${@:2}' -"
+
 echo "Creating 'vso' alias"
 
 $script_dir/../ensure-script.sh vso-alias "$(<$script_dir/git-scripts/vso-alias.sh)"
