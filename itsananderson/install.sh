@@ -1,9 +1,6 @@
 #!/bin/bash
 
-rel_script_dir=`dirname $0`
-pushd $rel_script_dir > /dev/null
-script_dir=`pwd -P`
-popd > /dev/null
+script_dir=$(pushd `dirname $0` > /dev/null && pwd -P)
 
 $script_dir/../install.sh
 
