@@ -26,5 +26,3 @@ echo "Creating 'vso' alias"
 $script_dir/../ensure-script.sh vso-alias "$(<$script_dir/git-scripts/vso-alias.sh)"
 
 git config --global alias.vso \!"$HOME/.git-scripts/vso-alias.sh"\ ""
-
-#!sh -c '/c/Users/Will/.git-scripts/vso-alias.sh $"@"' -
