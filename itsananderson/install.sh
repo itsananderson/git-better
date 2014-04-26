@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 rel_script_dir=`dirname $0`
 pushd $rel_script_dir > /dev/null
