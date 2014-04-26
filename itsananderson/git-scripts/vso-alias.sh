@@ -1,3 +1,24 @@
+# This script provides a shortcut for cloning a VSO Git repository
+#
+# Suggested usage is to install as a 'vso' alias for git
+# 
+#     git config --global alias.vso \!"$HOME/.git-scripts/vso-alias.sh"\ ""
+#
+# Usage:
+#
+#     git vso <subdomain>:<project>[:repository] [other 'git clone' args]
+#
+# Examples:
+#
+#     git vso itsananderson:website
+#
+#     git vso itsananderson:website:repository2
+#
+#     git vso itsananderson:website another-folder
+#
+#     git vso "itsananderson:OMG Spaces" --bare yet-another-folder
+
+
 # Split the repo info
 IFS=':' read -ra parts <<< "$1";
 
