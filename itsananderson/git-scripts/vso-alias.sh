@@ -113,3 +113,5 @@ remote() {
     echo git remote "${args[@]}"
     git remote "${args[@]}"
 };
+
+# TODO: Make a -s, --subdomain arg that defaults to `git config vso.subdomain`
