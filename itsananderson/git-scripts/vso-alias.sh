@@ -80,7 +80,6 @@ clone() {
     done
 
     echo git clone "${args[@]}" $'\n'
-
     git clone "${args[@]}"
 };
 
@@ -112,5 +111,5 @@ remote() {
     fi
 
     echo git remote "${args[@]}"
-    #git remote "${args[@]}"
+    git remote "${args[@]}"
 };
