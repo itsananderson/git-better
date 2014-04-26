@@ -21,8 +21,9 @@ echo "Creating 'hub' alias"
 
 git config --global alias.hub \!"sh -c 'git clone git@github.com:\$1.git \${@:2}' -"
 
-echo "Creating 'vso' alias"
+echo "Creating 'vsoc' and 'vsor' aliases"
 
 $script_dir/../ensure-script.sh vso-alias "$(<$script_dir/git-scripts/vso-alias.sh)"
 
-git config --global alias.vso \!"$HOME/.git-scripts/vso-alias.sh"\ ""
+git config --global alias.vsoc \!". /c/Users/wiand/.git-scripts/vso-alias.sh; clone" ""
+git config --global alias.vsor \!". /c/Users/wiand/.git-scripts/vso-alias.sh; remote" ""
