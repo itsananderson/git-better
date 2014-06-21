@@ -18,8 +18,6 @@ script_dir=$(pushd `dirname $0` > /dev/null && pwd -P)
  
 ./ensure-script.sh diff-wrapper "$(<$script_dir/git-scripts/diff-wrapper.sh)"
 
-git config --global diff.external $HOME/.git-scripts/diff-wrapper.sh
-git config --global diff.tool kdiff3
 git config --global difftool.kdiff3.cmd "'$kdiffpath' \$LOCAL \$REMOTE"
 git config --global difftool.kdiff3.keepBackup false
 git config --global difftool.kdiff3.trustExitCode true
