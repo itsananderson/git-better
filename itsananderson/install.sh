@@ -6,7 +6,7 @@ $script_dir/../install.sh
 
 # User specific install steps
 
-git config --global format.pretty format:"%C(yellow)%h%Creset %s%n%Cgreen%ad%Creset %aN <%aE>%n"
+git config --global format.pretty format:"%C(auto)%h %d%Creset %s%n%Cgreen%ad%Creset %aN <%aE>%n"
 
 echo "Customizing KDiff3 settings"
 
