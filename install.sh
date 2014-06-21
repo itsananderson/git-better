@@ -2,8 +2,11 @@
 
 echo "Performing Git Better base install"
 
-# Configure kdiff as the default merge/diff tool
+echo "Enabling console colors for Git commands"
+git config --global color.ui true
+
+echo "Configuring kdiff as the default merge/diff tool"
 ./kdiff.sh
 
-# Configure some useful aliases
+echo "Configuring some useful aliases"
 ./alias.sh

@@ -25,10 +25,9 @@ echo "Creating 'vsoc' and 'vsor' aliases"
 
 $script_dir/../ensure-script.sh vso-alias "$(<$script_dir/git-scripts/vso-alias.sh)"
 
-git config --global alias.vsoc \!". /c/Users/wiand/.git-scripts/vso-alias.sh; clone" ""
-git config --global alias.vsor \!". /c/Users/wiand/.git-scripts/vso-alias.sh; remote" ""
-
 gvimpath=`which gvim`
 echo "Fixing GVIM script"
 cp $script_dir/fixed-gvim.sh "$gvimpath"
 
+git config --global alias.vsoc \!". ~/.git-scripts/vso-alias.sh; clone" ""
+git config --global alias.vsor \!". ~/.git-scripts/vso-alias.sh; remote" ""
