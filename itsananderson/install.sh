@@ -1,4 +1,5 @@
-#!/bin/bash
+#
+/bin/bash
 
 script_dir=$(pushd `dirname $0` > /dev/null && pwd -P)
 
@@ -31,3 +32,4 @@ cp $script_dir/fixed-gvim.sh "$gvimpath"
 
 git config --global alias.vsoc \!". ~/.git-scripts/vso-alias.sh; clone" ""
 git config --global alias.vsor \!". ~/.git-scripts/vso-alias.sh; remote" ""
+git config --global alias.cara "commit --amend --reset-author"
