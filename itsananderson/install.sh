@@ -21,9 +21,8 @@ echo "Creating 'hub' alias"
 
 git config --global alias.hub \!"sh -c 'git clone git@github.com:\$1.git \${@:2}' -"
 
-echo "Creating 'vsoc' and 'vsor' aliases"
-
 $script_dir/../ensure-script.sh vso-alias "$(<$script_dir/git-scripts/vso-alias.sh)"
+$script_dir/../ensure-script.sh email-guess "$(<$script_dir/git-scripts/email-guess.sh)"
 
 gvimpath=`which gvim`
 echo "Fixing GVIM script"
@@ -31,4 +30,5 @@ cp $script_dir/fixed-gvim.sh "$gvimpath"
 
 git config --global alias.vsoc \!". ~/.git-scripts/vso-alias.sh; clone" ""
 git config --global alias.vsor \!". ~/.git-scripts/vso-alias.sh; remote" ""
+git config --global alias.email-guess \!". ~/.git-scripts/email-guess.sh" ""
 git config --global alias.cara "commit --amend --reset-author"
