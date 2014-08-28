@@ -1,5 +1,4 @@
-#
-/bin/bash
+#/bin/bash
 
 script_dir=$(pushd `dirname $0` > /dev/null && pwd -P)
 
