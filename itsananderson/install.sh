@@ -10,7 +10,7 @@ git config --global format.pretty format:"%C(auto)%h %d%Creset %s%n%Cgreen%ad%Cr
 
 echo "Customizing KDiff3 settings"
 
-if [ ! -e "~/.kdiff3rc" ]
+if [[ ! -e "~/.kdiff3rc" ]]
 then
     cp $script_dir/.kdiff3rc-base ~/.kdiff3rc
 fi
@@ -25,7 +25,7 @@ $script_dir/../ensure-script.sh vso-alias "$(<$script_dir/git-scripts/vso-alias.
 $script_dir/../ensure-script.sh email-guess "$(<$script_dir/git-scripts/email-guess.sh)"
 
 gvimpath=`which gvim`
-if [ $gvimpath ]; then
+if [[ -n $gvimpath ]]; then
   echo "Fixing GVIM script"
   cp $script_dir/fixed-gvim.sh "$gvimpath"
 fi
