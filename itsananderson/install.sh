@@ -30,6 +30,8 @@ if [[ -n $gvimpath ]]; then
   cp $script_dir/fixed-gvim.sh "$gvimpath"
 fi
 
+git config --global rerere.enabled true
+
 git config --global alias.vsoc \!". ~/.git-scripts/vso-alias.sh; clone" ""
 git config --global alias.vsor \!". ~/.git-scripts/vso-alias.sh; remote" ""
 git config --global alias.email-guess \!". ~/.git-scripts/email-guess.sh" ""
