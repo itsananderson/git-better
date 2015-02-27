@@ -6,9 +6,6 @@ email=will@itsananderson.com # default
 if [[ $remote == *github.com:Microsoft* ]]; then
   email=wiand@microsoft.com
 fi
-if [[ $remote == *enr.visualstudio.com* ]]; then
-  email=wiand@microsoft.com
-fi
 if [[ $remote == *itsananderson.visualstudio.com* ]]; then
   email=will@codeawhile.com
 fi
